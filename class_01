@@ -115,3 +115,95 @@ if (discrim > 0) {
                 roots <- c()
         }
 }
+
+
+##Fors and loops
+x <- c("uno","dos","tres")
+
+y <- c(1,3)
+for (i in y){
+    cat(x[-i],"\n")
+}
+
+n<-10000
+x<-1
+for(i in 1:n){
+    x[i] <- i
+}
+
+x <- 10
+while (x <= 1000){
+    cat(x,"\n")
+    x<- x+5
+}
+
+n <- 100
+S <- 0
+for(i in 1:n){
+    S <- S+ i^2
+}
+
+tiempo1 <- proc.time()
+S<-0
+for(i in 1:(10^4)){
+    S<-S+1
+}
+tiempoFinal <- proc.time() -tiempo1
+cat(tiempoFinal,"\n")
+
+
+n_factorial <- function(n=3){
+    n_fact<-prod(1:n)
+    return(n_fact)
+}
+
+n_choose_r <- function(n,r){
+    n_ch_r <- fa
+}
+
+# calcula el factorial de n
+nfact2 <- function(n) {
+    if (n == 1) {
+        cat("se llam´o a nfact2(1)\n")
+        return(1)
+    } else {
+        cat("se llam´o a nfact2(", n, ")\n", sep = "")
+        return(n*nfact2(n-1))
+    }
+}
+
+# ordenamiento alfabetico, por default
+cabello <- c("rubio", "negro", "cafe", "negro","rubio","calvo","gris")
+cabello2 <- factor(cabello)
+niveles <- levesl(cabello2)
+table(cabello2)
+
+#Ordenamiento como yo lo quiero
+uno <- c("L","H","H","L","M","M","L")
+dos <- factor(uno, levels=c("L","H","M"), ordered =TRUE)
+datostable(dos)
+
+as.vector(dos)
+as.numeric(dos )
+
+a <- c("alto", "bajo", "gordo", "flaco")
+b <- c(23,45,12,2)
+c <- c("A","B","A","C")
+c <- factor(c)
+datos <- data.frame(a,b,c, row.names=a)
+
+#Grupo indexado de elementos, que no tienen que ser forzosamente del mismo tipo
+
+
+lista1 <- list("uno", TRUE, 3, c("c","u","a","t","r","o"))
+lista1
+lista1[[2]]
+mode(lista1[[2]])
+mode(lista1[2])
+lista1[[4]][1]
+lista1[4][1]
+
+# Leer sobre el uso y abuso de P-Value como sinonimo de significancia en las pruebas caracteristicas
+lm.mtcars <- lm(mpg ~ hp + disp, data=mtcars)
+names(lm.mtcars)
+summary(lm.mtcars)
